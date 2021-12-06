@@ -1,11 +1,13 @@
 <?php
 include "../../include/lib/connection.php";
-// default values
+
 $stars = 210;
 $coins = 63;
 $pc = 0;
 $demons = 3;
 
+ob_flush();
+flush();
 $query = $db->prepare("SELECT COUNT(starDemon) FROM levels WHERE starDemon = 1");
 $query->execute();
 $demons = $demons + $query->fetchColumn();
@@ -18,6 +20,7 @@ foreach($result as $a){
 	$querys->execute();
 	$stars = $stars + $querys->fetchColumn();
 }
+
 $query = $db->prepare("SELECT SUM(stars) FROM mappacks");
 $query->execute();
 $stars = $stars + $query->fetchColumn();
@@ -36,6 +39,7 @@ $query = $db->prepare("SELECT SUM(coins) FROM levels");
 $query->execute();
 $pc = $query->fetchColumn();
 
+
 $query = $db->prepare("SELECT * FROM gauntlets");
 $query->execute();
 $result = $query->fetchAll();
@@ -44,6 +48,7 @@ foreach($result as $a){
 	$querys->execute();
 	$stars = $stars + $querys->fetchColumn();
 }
+
 
 $query = $db->prepare("SELECT * FROM gauntlets");
 $query->execute();
@@ -81,9 +86,12 @@ foreach($result as $a){
 	$stars = $stars + $querys->fetchColumn();
 }
 
-$query = $db->prepare("UPDATE users SET isBanned = 1 WHERE stars > $stars OR coins > $coins OR userCoins > $pc");
-$query->execute();
+$query = $db->prepare("UPDATE users SET isBanned = 1 WHERE stars > :star OR coins > :coin OR userCoins > :pc");
+$query->execute(array(":star" => $stars, ":coin" => $coins, ":pc" => $pc));
 $query = $db->prepare("UPDATE users SET isBanned = 1 WHERE stars < 0 OR coins < 0 OR userCoins < 0");
 $query->execute();
+echo "1";
+ob_flush();
+flush();
 ?>
-1
+
