@@ -1,10 +1,10 @@
 <html>
-<head>
-<title>ACCOUNT LINKING</title>
-</head>
-<body>
+	<head>
+	<title>GDPS Account Link</title>
+	</head>
+	<body>
 <?php
-//error_reporting(-1);
+include "../settings/name.php";
 include "../include/lib/connection.php";
 require_once "../include/lib/generatePass.php";
 $generatePass = new generatePass();
@@ -74,10 +74,7 @@ if(!empty($_POST["userhere"]) AND !empty($_POST["passhere"]) AND !empty($_POST["
 		echo "Invalid local username/password combination.";
 	}
 }else{
-	echo '<form action="linkAcc.php" method="post">Your password for the target server is NOT saved, it\'s used for one-time verification purposes only.<h3>CvoltonGDPS</h3>Username: <input type="text" name="userhere"><br>Password: <input type="password" name="passhere"><br><h3>Target server</h3>Username: <input type="text" name="usertarg"><br>Password: <input type="password" name="passtarg"><br>URL (dont change if you dont know what youre doing): <input type="text" name="server" value="http://www.boomlings.com/database/accounts/loginGJAccount.php"><br>Debug Mode (0=off, 1=on): <input type="text" name="debug" value="0"><br><input type="submit" value="Link Accounts"></form><br>Alternative servers to link to:<br>
-	http://www.boomlings.com/database/accounts/loginGJAccount.php - Robtops server<br>
-	http://pi.michaelbrabec.cz:9010/a/accounts/loginGJAccount.php - CvoltonGDPS<br>
-	http://teamhax.altervista.org/dbh/accounts/loginGJAccount.php - TeamHax GDPS';
+	echo '<form action="linkAcc.php" method="post">Your password for the target server is NOT saved, it\'s used for one-time verification purposes only.<h3>'.$gdpsname.'</h3>Username: <input type="text" name="userhere"><br>Password: <input type="password" name="passhere"><br><h3>Target server</h3>Username: <input type="text" name="usertarg"><br>Password: <input type="password" name="passtarg"><br>URL (dont change if you dont know what youre doing): <input type="text" name="server" value="http://www.boomlings.com/database/accounts/loginGJAccount.php"><br><input type="submit" value="Link"></form>';
 }
 ?>
 </body>
