@@ -1,1 +1,1 @@
-<?php $gdpsname = "TheGDPS"; ?>
+<?php $gdpsname = "GDPS"; ?>
