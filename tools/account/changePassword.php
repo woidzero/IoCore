@@ -2,8 +2,8 @@
 include "../../include/lib/connection.php";
 include_once "../../settings/security.php";
 require "../../include/lib/generatePass.php";
-require_once "../../incl/lib/exploitPatch.php";
-include_once "../../incl/lib/defuse-crypto.phar";
+require_once "../../include/lib/exploitPatch.php";
+include_once "../../include/lib/defuse-crypto.phar";
 use Defuse\Crypto\KeyProtectedByPassword;
 use Defuse\Crypto\Crypto;
 use Defuse\Crypto\Key;

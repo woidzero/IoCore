@@ -1,7 +1,7 @@
 <?php
 include "../../include/lib/connection.php";
 require "../../include/lib/generatePass.php";
-require_once "../../incl/lib/exploitPatch.php";
+require_once "../../include/lib/exploitPatch.php";
 $ep = new exploitPatch();
 //here im getting all the data
 $userName = $ep->remove($_POST["userName"]);
