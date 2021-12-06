@@ -14,7 +14,8 @@ Required PHP version: 5.4+
 1) Upload the files on a webserver
 2) Import database.sql into a MySQL/MariaDB database
 3) Edit the links in GeometryDash.exe (base64 encoded since 2.1)
-4) Edit `/config/connection.php` and `/config/mail.php`
+4) If you want use dashboard: write GDPS name into `/settings/name.php`
+5) Edit `/config/connection.php` and `/config/mail.php`
 
 ### Support:
 https://discord.gg/hH6GA4kmu8
