@@ -8,6 +8,7 @@ Required PHP version: 5.4+
 1) Renamed folders.
 2) Song upload better.
 3) Optimization.
+4) GDPS API (tools/api)
 
 ### Setup
 1) Upload the files on a webserver
@@ -17,8 +18,6 @@ Required PHP version: 5.4+
 
 ### Support:
 https://discord.gg/hH6GA4kmu8
-
-
 
 ### Credits
 Originals: https://github.com/Cvolton/GMDprivateServer & https://github.com/foxodever/BetterCvoltonGDPS
