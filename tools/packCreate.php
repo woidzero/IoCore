@@ -98,7 +98,7 @@ if(!empty($_POST["userName"]) AND !empty($_POST["password"]) AND !empty($_POST["
 		echo "Invalid password or nonexistant account. <a href='packCreate.php'>Try again</a>";
 	}
 }else{
-	echo '<script src="include/jscolor/jscolor.js"></script>
+	echo '<script src="jscolor/jscolor.js"></script>
 		<form action="packCreate.php" method="post">Username: <input type="text" name="userName">
 		<br>Password: <input type="password" name="password">
 		<br>Pack Name: <input type="text" name="packName">
