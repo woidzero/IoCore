@@ -1,3 +1,0 @@
-<?php
-$redirect = 0;
-?>
