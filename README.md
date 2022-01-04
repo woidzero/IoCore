@@ -1,6 +1,6 @@
  <div align="center">
  <img src="https://woidzero.xyz/assets/iocore.png" width="100">
-  <h1>IoCore</h1>
+  #IoCore
   <a href="https://woidzero.xyz/articles/iocore/changelog.html">Changelog</a> | <a href="https://woidzero.xyz/articles/iocore/docs.html">Docs</a></br></br></br>
 </div>
 
