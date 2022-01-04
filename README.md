@@ -2,12 +2,12 @@
 
  <div align="center">
   <h1>IoCore</h1>
-  <a href="https://woidzero.xyz/articles/iocore/changelog.html">Changelog</a> | <a href="https://woidzero.xyz/articles/iocore/docs.html">Docs</a>
+  <a href="https://woidzero.xyz/articles/iocore/changelog.html">Changelog</a> | <a href="https://woidzero.xyz/articles/iocore/docs.html">Docs</a></br>
 </div>
 
-> Based on CvoltonGDPS & BetterGDPS
-> Supported Geometry Dash versions: 1.9 - 2.11
-> Required PHP version: 5.4+
+> Based on CvoltonGDPS & BetterGDPS</br>
+> Supported Geometry Dash versions: 1.9 - 2.11</br>
+> Required PHP version: 5.4+</br>
 
 ### Whats new?
 1) Renamed folders.
