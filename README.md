@@ -1,6 +1,6 @@
 <div align="center">
 <p>
-    <img width="100" src="https://woidzero.xyz/assets/icore.png">
+    <img width="100" src="https://woidzero.xyz/assets/iocore.png">
 </p>
 <h1>IoCore</h1>
 
