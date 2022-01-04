@@ -9,7 +9,7 @@ function chkarray($source){
 		$target = "0";
 	}else{
 		$target = $source;
-	}112
+	}
 	return $target;
 }
 //error_reporting(0);
