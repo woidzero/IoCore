@@ -3,11 +3,11 @@
  <div align="center">
   <h1>IoCore</h1>
   <a href="https://woidzero.xyz/articles/iocore/changelog.html">Changelog</a> | <a href="https://woidzero.xyz/articles/iocore/docs.html">Docs</a>
-  Based on CvoltonGDPS & BetterGDPS
 </div>
- 
-Supported Geometry Dash versions: 1.7 - 2.11
-Required PHP version: 5.4+
+
+> Based on CvoltonGDPS & BetterGDPS
+> Supported Geometry Dash versions: 1.9 - 2.11
+> Required PHP version: 5.4+
 
 ### Whats new?
 1) Renamed folders.
