@@ -2,7 +2,7 @@
 <p>
     <img width="100" src="https://woidzero.xyz/assets/iocore.png">
 </p>
-<h1>IoCore</h1>
+<h1>IoCore GDPS</h1>
 
 [Author](https://woidzero.xyz/owin) |
 [Changelog](https://github.com/IoCore/CHANGELOG.md)
