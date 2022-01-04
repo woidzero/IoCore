@@ -1,3 +1,5 @@
+<img src="https://woidzero.xyz/assets/iocore.png" width="100">
+
 # IoCore
 Based on CvoltonGDPS & BetterGDPS
 
