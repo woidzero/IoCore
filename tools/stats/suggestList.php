@@ -1,9 +1,9 @@
 <?php
 include "../../include/lib/connection.php";
 require "../../include/lib/generatePass.php";
-require_once "../../incl/lib/exploitPatch.php";
+require_once "../../include/lib/exploitPatch.php";
 $ep = new exploitPatch();
-require_once "../../incl/lib/mainLib.php";
+require_once "../../include/lib/mainLib.php";
 $gs = new mainLib();
 if(!empty($_POST["userName"]) AND !empty($_POST["password"])){
 	$userName = $ep->remove($_POST["userName"]);

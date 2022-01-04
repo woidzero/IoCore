@@ -2,10 +2,10 @@
 chdir(dirname(__FILE__));
 if(file_exists("../logs/fixfrndlog.txt")){
 	$cptime = file_get_contents("../logs/fixfrndlog.txt");
-	$newtime = time() - 30;
+	$newtime = time() - 5;
 	if($cptime > $newtime){
 		$remaintime = time() - $cptime;
-		$remaintime = 30 - $remaintime;
+		$remaintime = 5 - $remaintime;
 		$remainmins = floor($remaintime / 60);
 		$remainsecs = $remainmins * 60;
 		$remainsecs = $remaintime - $remainsecs;

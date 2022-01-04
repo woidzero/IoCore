@@ -1,7 +1,7 @@
 <html>
-<head>
-<title>LEVEL REUPLOAD</title>
-</head>
+	<head>
+		<title>LEVEL REUPLOAD</title>
+	</head>
 <body>
 <?php
 function chkarray($source){
@@ -9,7 +9,7 @@ function chkarray($source){
 		$target = "0";
 	}else{
 		$target = $source;
-	}
+	}112
 	return $target;
 }
 //error_reporting(0);
@@ -18,6 +18,7 @@ require "../include/lib/XORCipher.php";
 require "../settings/reuploadAcc.php";
 require_once "../include/lib/mainLib.php";
 $gs = new mainLib();
+
 if(!empty($_POST["levelid"])){
 	$levelID = $_POST["levelid"];
 	$levelID = preg_replace("/[^0-9]/", '', $levelID);
@@ -130,10 +131,7 @@ if(!empty($_POST["levelid"])){
 		}
 	}
 }else{
-	echo '<h4><a href="linkAcc.php">LINKING YOUR ACCOUNT USING linkAcc.php RECOMMENDED</a></h4><form action="levelReupload.php" method="post">ID: <input type="text" name="levelid"><br>URL (dont change if you dont know what youre doing): <input type="text" name="server" value="http://www.boomlings.com/database/downloadGJLevel22.php"><br>Debug Mode (0=off, 1=on): <input type="text" name="debug" value="0"><br><input type="submit" value="Reupload"></form><br>Alternative servers to reupload from:<br>
-	http://www.boomlings.com/database/downloadGJLevel22.php - Robtops server<br>
-	http://pi.michaelbrabec.cz:9010/a/downloadGJLevel22.php - CvoltonGDPS<br>
-	http://teamhax.altervista.org/dbh/downloadGJLevel22.php - TeamHax GDPS';
+	echo '<h4><a href="linkAcc.php">LINKING YOUR ACCOUNT USING linkAcc.php RECOMMENDED</a></h4><form action="levelReupload.php" method="post">ID: <input type="text" name="levelid"><br>URL (dont change if you dont know what youre doing): <input type="text" name="server" value="http://www.boomlings.com/database/downloadGJLevel22.php"><br>Debug Mode (0=off, 1=on): <input type="text" name="debug" value="0"><br><input type="submit" value="Reupload"></form>';
 }
 ?>
 </body>
