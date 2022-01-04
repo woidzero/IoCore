@@ -1,7 +1,7 @@
 <img src="https://woidzero.xyz/assets/iocore.png" width="100">
 
  <div align="center">
-  # IoCore
+  <h1>IoCore</h1>
   <a href="https://woidzero.xyz/articles/iocore/changelog.html">Changelog</a> | <a href="https://woidzero.xyz/articles/iocore/docs.html">Docs</a>
   Based on CvoltonGDPS & BetterGDPS
 </div>
