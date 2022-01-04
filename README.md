@@ -1,8 +1,11 @@
 <img src="https://woidzero.xyz/assets/iocore.png" width="100">
 
-# IoCore
-Based on CvoltonGDPS & BetterGDPS
-
+ <div align="center">
+  # IoCore
+  <a href="https://woidzero.xyz/articles/iocore/changelog.html">Changelog</a> | <a href="https://woidzero.xyz/articles/iocore/docs.html">Docs</a>
+  Based on CvoltonGDPS & BetterGDPS
+</div>
+ 
 Supported Geometry Dash versions: 1.7 - 2.11
 Required PHP version: 5.4+
 
