@@ -4,7 +4,7 @@
 </p>
 <h1>IoCore GDPS</h1>
 
-[Author](https://woidzero.xyz/owin) |
+[Author](https://woidzero.xyz/) |
 [Changelog](https://github.com/IoCore/CHANGELOG.md)
 
 </div>
@@ -18,6 +18,8 @@
 2) Song upload better.
 3) Optimization.
 4) GDPS API (tools/api)
+5) Design Tools
+6) Utils
 
 ### Setup
 1) Upload the files on a webserver
