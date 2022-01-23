@@ -1,6 +1,6 @@
 <?php
 $levelID = $_GET['levelid'];
-include "../database/incl/lib/connection.php";
+include "../../include/lib/connection.php";
 
 $ifexists = $db->prepare("SELECT count(*) FROM levels WHERE levelID=:levelID");
 $ifexists->execute(["levelID"=>$levelID]);

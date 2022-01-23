@@ -1,5 +1,5 @@
 <?php
-include "../database/incl/lib/connection.php";
+include "../../include/lib/connection.php";
 
 $getleveldata = $db->prepare(
     "SELECT * FROM levels

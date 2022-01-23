@@ -1,5 +1,5 @@
 <?php
-include "../database/incl/lib/connection.php";
+include "../../include/lib/connection.php";
 
 $getleveldata = $db->prepare(
     "SELECT * FROM levels 
@@ -7,6 +7,7 @@ $getleveldata = $db->prepare(
         (SELECT levelID FROM dailyfeatures GROUP BY levelID) 
     ORDER BY levelID"
 );
+
 $getdailydata = $db->prepare("SELECT * FROM dailyfeatures");
 
 $getleveldata->execute(["levels"=>$levels]);

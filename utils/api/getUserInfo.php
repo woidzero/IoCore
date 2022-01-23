@@ -1,9 +1,10 @@
 <?php
 $userName = $_GET['username'];
-include "../database/incl/lib/connection.php";
+include "../../include/lib/connection.php";
+
 $ifexists = $db->prepare("SELECT count(*) FROM users WHERE userName=:userName");
 $ifexists->execute(["userName"=>$userName]);
-if($ifexists->fetchColumn()==0){exit("<center><h1>404</h1><hr><h4>Not Found</h4></center>");}
+if($ifexists->fetchColumn()==0){exit();}
 
 $getuserdata = $db->prepare("SELECT * FROM users WHERE userName=:userName");
 $getuserdata->execute(["userName"=>$userName]);
