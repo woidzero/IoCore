@@ -1,6 +1,11 @@
+<?php
+include "../settings/name.php";
+
+?>
+
 <html>
 	<head>
-		<title>LEVEL REUPLOAD</title>
+		<title><?php echo $gdpsname ?> Level Reupload</title>
 	</head>
 <body>
 <?php

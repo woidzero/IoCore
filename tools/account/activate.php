@@ -1,6 +1,6 @@
 <?php
-include "../include/lib/connection.php";
-require_once "../include/lib/mainLib.php";
+include "../../include/lib/connection.php";
+require_once "../../include/lib/mainLib.php";
 $gs = new mainLib();
 session_start();
 function invalid() {
@@ -21,8 +21,8 @@ function success() {
         }
     </style>
     <div class="main" align="center">
-        <h1>Account activated!</h1>
-        <p>You can login now</p>
+        <h1>Аккаунт активирован!</h1>
+        <p>Вы можете входить!</p>
     </div>';
     exit;
 }
@@ -67,7 +67,7 @@ if($cap == "") {
         $query->execute([':tk' => $tk]);
         success();
     } else {
-        $err = "Invalid captcha";
+        $err = "Неправильно.";
     }
 }
 ?>
@@ -85,17 +85,18 @@ if($cap == "") {
     }
 </style>
 <div class="main" align="center">
-    <h1>Almost here!</h1>
-    <p style="padding-bottom: 10px"><?php
-    if(!$err) {
-        echo "Please verify what you are not a robot!";
+    <h1>Активация аккаунта Paradox Dash!</h1>
+    <p style="padding-bottom: 10px">
+    <?php
+    if (!$err) {
+        echo "Введите текст с картинки в поле ввода.<br>";
     } else {
         echo $err;  
     }
     ?></p>
     <img style="border: 1px solid black" src="cap.php" method="post">
     <form action="activate.php?token=<?=$tk?>" method="post">
-        <input style="padding-bottom: 5px" name="cap" placeholder="Enter here..." /><br />
+        <input style="padding-bottom: 5px" name="cap" placeholder="..." /><br />
         <input type="submit" value="verify" />
     </form>
 </div>
