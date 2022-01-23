@@ -1,5 +1,6 @@
 <?php
 include "../../include/lib/connection.php";
+include "../../settings/name.php";
 require_once "../../include/lib/exploitPatch.php";
 
 if ($_FILES && $_FILES['filename']['error'] == UPLOAD_ERR_OK) {
@@ -22,11 +23,11 @@ if ($_FILES && $_FILES['filename']['error'] == UPLOAD_ERR_OK) {
             $size = round($_FILES['filename']['size'] / 1024 / 1024, 2);
             $hash = "";
             $servername = $_SERVER['SERVER_NAME'];
-            $song = "https://$servername/database/tools/songs/song/$name";
+            $song = "https://$servername/tps/database/tools/songs/song/$name";
             $query = $db->prepare("INSERT INTO songs (name, authorID, authorName, size, download, hash)
             VALUES (:name, '9', :author, :size, :download, :hash)");
             $query->execute([':name' => $song_name, ':download' => $song, ':author' => "IoCore Music", ':size' => $size, ':hash' => $hash]);
-            $log = "[SUCCES] ID: <b>ID ".$db->lastInsertId()."</b>";
+            $log = "[SUCCES] ID: <b>".$db->lastInsertId()."</b>";
         }
     }
 } else {}
@@ -38,7 +39,7 @@ if ($_FILES && $_FILES['filename']['error'] == UPLOAD_ERR_OK) {
 
 <body>
 	<main id="tools">
-		<h1>GDPS Tools > Song Upload</h1>
+		<h1><?php echo $gdpsname ?> Tools > Song Upload</h1>
 		<section id="toolbox" style="height: 30rem;">
             <form method="post" action="upload.php" enctype='multipart/form-data'>
                 <input type='file' name='filename' size='10' /><br>
