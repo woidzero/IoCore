@@ -503,7 +503,11 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`roleID`, `priority`, `roleName`, `commandRate`, `commandFeature`, `commandEpic`, `commandUnepic`, `commandVerifycoins`, `commandDaily`, `commandWeekly`, `commandDelete`, `commandSetacc`, `commandRenameOwn`, `commandRenameAll`, `commandPassOwn`, `commandPassAll`, `commandDescriptionOwn`, `commandDescriptionAll`, `commandPublicOwn`, `commandPublicAll`, `commandUnlistOwn`, `commandUnlistAll`, `commandSharecpOwn`, `commandSharecpAll`, `commandSongOwn`, `commandSongAll`, `profilecommandDiscord`, `actionRateDemon`, `actionRateStars`, `actionRateDifficulty`, `actionRequestMod`, `actionSuggestRating`, `toolLeaderboardsban`, `toolPackcreate`, `toolQuestsCreate`, `toolModactions`, `toolSuggestlist`, `dashboardModTools`, `modipCategory`, `isDefault`, `commentColor`, `modBadgeLevel`) VALUES
-(1, 0, 'Player', 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, '000,000,000', 0);
+(1, 0, 'Player', 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, '000,000,000', 0),
+(1, 4, 'Owner', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '0,128,255', 2),
+(3, 2, 'Moderator', 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 1, 1, 1, 0, '127,255,212', 2),
+(4, 1, 'Suggester', 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, '000,255,000', 1);
+
 
 -- --------------------------------------------------------
 
