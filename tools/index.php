@@ -1,11 +1,13 @@
 <?php 
-include '../include/lib/count.php';
-$count = new Count();
+include '../include/lib/mainLib.php';
+include '../config/name.php';
 
-$acc = $count->getCountAccounts();
-$com = $count->getCountComments();
-$lvl = $count->getCountLevels();
-$user = $count->getCountUsers();
+$gs = new mainLib();
+
+$lvl = $gs->getCount("levels");
+$usrs = $gs->getCount("users");
+$com = $gs->getCount("levels");
+$acc = $gs->getCount("acc");
 ?>
 
 <meta charset="utf-8">
@@ -14,11 +16,11 @@ $user = $count->getCountUsers();
 <link href="../include/components/images/tools_favicon.png" rel="shortcut icon">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<title>GDPS Tools [IoCore]</title>
+<title><?php echo $gdpsname ?> Tools [IoCore]</title>
 
 <body>
 	<main id="tools">
-		<h1>GDPS Tools</h1>
+		<h1><?php echo $gdpsname ?> Tools</h1>
 		<section id="toolbox">
 			<h2 class="toolName">Uploading</h2>
 			<a class="button" href="songAdd.php">Song Upload</a>
@@ -38,8 +40,8 @@ $user = $count->getCountUsers();
 						
 						labels: ['Accounts', 'Levels', 'Comments', 'Users'],
 						datasets: [{
-							label: 'GDPS Stats',
-							data: [<?php echo $acc; ?>, <?php echo $lvl; ?>, <?php echo $com; ?>, <?php echo $user; ?>],
+							label: '<?php echo $gdpsname ?> Stats',
+							data: [<?php echo $acc; ?>, <?php echo $lvl; ?>, <?php echo $com; ?>, <?php echo $usrs; ?>],
 							backgroundColor: [
 								'rgba(255, 99, 132, 0.2)',
 								'rgba(54, 162, 235, 0.2)',

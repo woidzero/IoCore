@@ -39,14 +39,14 @@ if (!empty($_POST["userName"]) AND !empty($_POST["password"])) {
 <link href="../../include/components/images/tools_favicon.png" rel="shortcut icon">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<title>Log-in</title>
+<title></title>
 
 <body>
 	<main id="tools">
 		<h1>Log-in</h1>
-		<section id="toolbox" style="height: 15rem; width: 50%;">
+		<section id="toolbox" style="height: 20rem; width: 50%;">
 			<h2 class="toolName">Login</h2>
-            <form class="login" action="index.php" method="post">
+            <form class="form" action="index.php" method="post">
                 Username: <input type="text" name="userName"><br>
                 Password: <input type="password" name="password"><br>
                 <input type="submit" value="Login">
