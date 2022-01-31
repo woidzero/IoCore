@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+html {
+	box-sizing: border-box; 
+}
+
+* {
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box; 
+  transition: ease-in-out 0.2s;
+}
+
+
+body {
+  background: #1e2124;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+#toolbox {
+  height: 40%;
+  background: #282b30;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+#cron {
+  display: block;
+  background: #282b30;
+  text-align: center;
+}
+
+#cron p {
+  color: azure;
+  padding: 15px;
+}
+
+#cron h1 {
+  font-size: 30px;
+  color: #93b4ff;
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px;
+  color: azure;
+  background: #36393e;
+  margin-top: 5%;
+  margin: 1% 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #424549;
+}
+
+td .button {
+  display: inline-block;
+  padding: 5px;
+  color: azure;
+  background: #36393e;
+  margin: 1% 10px;
+  cursor: pointer;
+}
+
+.toolName {
+  color: aliceblue;
+  padding-top: 3%;
+  font-size: 30px;
+}
+
+#tools h1 {
+  font-size: 30px;
+  color: #93b4ff;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  color: #93b4ff;
+  text-align: center;
+}
+
+
+footer {
+  color: #424549;
+  margin-top: 27%;
+  text-align: center;
+}
+
+
+footer span, footer a {
+  color: #7289da;
+  font-weight: 700;
+}
+
+canvas {
+  margin: 0 auto;
+  width: 90%;
+  height: 100;
+}
+
+#toolbox__log {
+  margin-top: 15%;
+}
+
+#toolbox__log a {
+  color: #fff;
+}
+
+input[type=file] {
+  margin-top: 15%;
+  border: dotted #424549 2px;
+  color: #d7f1fa;
+  padding: 30px;
+  background: #36393e;
+}
+
+form .button {
+  margin: 10px;
+  border: 0;
+  overflow: hidden;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 12px 30px;
+  color: #BFE2FF;
+  transition: box-shadow 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+#toolbox__log {
+  color: #7289da;
+}
+
+@media screen and (max-width: 780px) {
+  canvas {
+    width: 100%;
+  }
+}
+
+.form {
+  color: #BFE2FF;
+}
+
+.form input[type="submit"] {
+  margin: 10px;
+  border: 0;
+  overflow: hidden;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 12px 30px;
+  color: #BFE2FF;
+  transition: box-shadow 0.3s, transform 0.3s;
+  cursor: pointer;
+  background: #36393e;
+}
+
+.form input[type="text"], 
+.form input[type="password"] {
+  margin: 10px;
+  border: 0;
+  overflow: hidden;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 5px;
+  color: #BFE2FF;
+  transition: box-shadow 0.3s, transform 0.3s;
+  background: #36393e;
+}
+
+.table {
+	width: 100%;
+	border: none;
+	margin-bottom: 20px;
+}
+
+.table th {
+	font-weight: bold;
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	background: #35393f;
+	font-size: 14px;
+  color: #7289da;
+}
+
+.table tr th:first-child {
+	border-radius: 8px 0 0 8px;
+}
+
+.table tr th:last-child {
+	border-radius: 0 8px 8px 0;
+}
+
+.table td {
+	text-align: center;
+	border: none;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+  color: #fff;
+}
+
+.table tr {
+  background: #282b30;
+}
+
+.table tr td:first-child {
+	border-radius: 8px 0 0 8px;
+}
+
+.table tr td:last-child {
+	border-radius: 0 8px 8px 0;
+}
+
+.table td a {
+  color: #fff;
+  font-weight: 600;
+}
