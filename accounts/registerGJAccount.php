@@ -1,8 +1,9 @@
 <?php
-error_reporting(0);
 include "../include/lib/connection.php";
 include "../include/lib/mail.php";
+include "../config/name.php";
 require_once "../include/lib/exploitPatch.php";
+
 $ep = new exploitPatch();
 if($_POST["userName"] != "" && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) && $_POST["password"] != ""){
 	//here im getting all the data
@@ -64,7 +65,7 @@ if($_POST["userName"] != "" && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL
 					require("mail/PHPMailerAutoload.php");
 					$mail = new PHPMailer;
 					$mail->CharSet = 'utf-8';
-		
+
 					$mail->isSMTP();
 					$mail->Host = $smtp;
 					$mail->SMTPAuth = true;
@@ -76,9 +77,9 @@ if($_POST["userName"] != "" && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL
 					$mail->setFrom($mail_server);
 					$mail->addAddress("$email"); 
 					$mail->isHTML(true);
-					$mail->Subject = 'GDPS account activation';
-					$mail->Body    = "<h1 align=center>Hello $userName</h1><p align=center>activate your GDPS account by going to link down:</p>
-					<p align=center><a href='$url_register?token=$token' 'style=color:blue;text-decoration:none'>Activate your account</a></p>
+					$mail->Subject = $gdpsname.' Account activation';
+					$mail->Body    = "<h1 align=center>Paradox Dash Activate | $userName</h1><p align=center>activate your Paradox Dash account by going to link down:</p>
+					<p align=center><a href='$url_register?token=$token' style='color:red;text-decoration:none'>Activate your account</a></p>
 					<p align=center>Can not open link? $url_register?token=$token</p>";
 					$mail->AltBody = '';
 					if($mail->send()) {
