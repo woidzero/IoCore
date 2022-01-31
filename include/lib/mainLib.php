@@ -329,13 +329,13 @@ class mainLib {
 			$query->execute([':id' => $userID]);
 			if ($query->rowCount() > 0) {
 				$cps = $query->fetchColumn();
-				if($cp != 0) {
-					if($cp > 0) {
+				if ($cp != 0) {
+					if ($cp > 0) {
 						$cps = $cps + $cp;
 						$query = $db->prepare("UPDATE users SET creatorPoints = :cps WHERE userID = :id");
 						$query->execute([':id' => $userID, ':cps' => $cps]);
 						$a = 1;
-					} else if($cp < 0) {
+					} elseif ($cp < 0) {
 						$cps = $cps + $cp;
 						$query = $db->prepare("UPDATE users SET creatorPoints = :cps WHERE userID = :id");
 						$query->execute([':id' => $userID, ':cps' => $cps]);
@@ -380,7 +380,7 @@ class mainLib {
 		$query->execute([':id' => $userID]);
 		if ($query->rowCount() > 0) {
 			return $query->fetchColumn();
-		}else{
+		} else {
 			return 0;
 		}
 	}
@@ -389,9 +389,9 @@ class mainLib {
 		$query = $db->prepare("SELECT userName, extID FROM users WHERE userID = :id");
 		$query->execute([':id' => $userID]);
 		$userdata = $query->fetch();
-		if(is_numeric($userdata["extID"])){
+		if (is_numeric($userdata["extID"])) {
 			$extID = $userdata["extID"];
-		}else{
+		} else {
 			$extID = 0;
 		}
 		return $userID . ":" . $userdata["userName"] . ":" . $extID;
@@ -400,22 +400,22 @@ class mainLib {
 		include __DIR__ . "/connection.php";
 		$query3=$db->prepare("SELECT ID,name,authorID,authorName,size,isDisabled,download FROM songs WHERE ID = :songid LIMIT 1");
 		$query3->execute([':songid' => $songID]);
-		if($query3->rowCount() == 0){
+		if ($query3->rowCount() == 0) {
 			return false;
 		}
 		$result4 = $query3->fetch();
-		if($result4["isDisabled"] == 1){
+		if ($result4["isDisabled"] == 1) {
 			return false;
 		}
 		$dl = $result4["download"];
-		if(strpos($dl, ':') !== false){
+		if (strpos($dl, ':') !== false) {
 			$dl = urlencode($dl);
 		}
 		return "1~|~".$result4["ID"]."~|~2~|~".str_replace("#", "", $result4["name"])."~|~3~|~".$result4["authorID"]."~|~4~|~".$result4["authorName"]."~|~5~|~".$result4["size"]."~|~6~|~~|~10~|~".$dl."~|~7~|~~|~8~|~1";
 	}
 	public function randomString($length = 6) {
 		$randomString = openssl_random_pseudo_bytes($length);
-		if($randomString == false){
+		if ($randomString == false) {
 			$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 			$charactersLength = strlen($characters);
 			$randomString = '';
@@ -433,11 +433,11 @@ class mainLib {
 		$query->execute();
 		$result = $query->fetchAll();
 		$accountlist = array();
-		foreach($result as &$role){
+		foreach ($result as &$role) {
 			$query = $db->prepare("SELECT accountID FROM roleassign WHERE roleID = :roleID");
 			$query->execute([':roleID' => $role["roleID"]]);
 			$accounts = $query->fetchAll();
-			foreach($accounts as &$user){
+			foreach ($accounts as &$user) {
 				$accountlist[] = $user["accountID"];
 			}
 		}
@@ -449,7 +449,7 @@ class mainLib {
 		$query = $db->prepare("SELECT isAdmin FROM accounts WHERE accountID = :accountID");
 		$query->execute([':accountID' => $accountID]);
 		$isAdmin = $query->fetchColumn();
-		if($isAdmin == 1){
+		if ($isAdmin == 1) {
 			return 1;
 		}
 		
@@ -457,19 +457,19 @@ class mainLib {
 		$query->execute([':accountID' => $accountID]);
 		$roleIDarray = $query->fetchAll();
 		$roleIDlist = "";
-		foreach($roleIDarray as &$roleIDobject){
+		foreach ($roleIDarray as &$roleIDobject) {
 			$roleIDlist .= $roleIDobject["roleID"] . ",";
 		}
 		$roleIDlist = substr($roleIDlist, 0, -1);
-		if($roleIDlist != ""){
+		if ($roleIDlist != "") {
 			$query = $db->prepare("SELECT $permission FROM roles WHERE roleID IN ($roleIDlist) ORDER BY priority DESC");
 			$query->execute();
 			$roles = $query->fetchAll();
-			foreach($roles as &$role){
-				if($role[$permission] == 1){
+			foreach ($roles as &$role) {
+				if ($role[$permission] == 1) {
 					return true;
 				}
-				if($role[$permission] == 2){
+				if ($role[$permission] == 2) {
 					return false;
 				}
 			}
@@ -477,10 +477,10 @@ class mainLib {
 		$query = $db->prepare("SELECT $permission FROM roles WHERE isDefault = 1");
 		$query->execute();
 		$permState = $query->fetchColumn();
-		if($permState == 1){
+		if ($permState == 1) {
 			return true;
 		}
-		if($permState == 2){
+		if ($permState == 2) {
 			return false;
 		}
 		return false;
@@ -513,7 +513,7 @@ class mainLib {
 	public function getIP(){
 		if (isset($_SERVER['HTTP_CF_CONNECTING_IP']) && $this->isCloudFlareIP($_SERVER['REMOTE_ADDR'])) //CLOUDFLARE REVERSE PROXY SUPPORT
   			return $_SERVER['HTTP_CF_CONNECTING_IP'];
-		if(isset($_SERVER['HTTP_X_FORWARDED_FOR']) && ipInRange::ipv4_in_range($_SERVER['REMOTE_ADDR'], '127.0.0.0/8')) //LOCALHOST REVERSE PROXY SUPPORT (7m.pl)
+		if (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && ipInRange::ipv4_in_range($_SERVER['REMOTE_ADDR'], '127.0.0.0/8')) //LOCALHOST REVERSE PROXY SUPPORT (7m.pl)
 			return $_SERVER['HTTP_X_FORWARDED_FOR'];
 		return $_SERVER['REMOTE_ADDR'];
 	}
@@ -528,10 +528,10 @@ class mainLib {
 		$query->execute([':id' => $categoryID]);
 		$permState = $query->fetchColumn();
 		
-		if($permState == 1){
+		if ($permState == 1) {
 			return true;
 		}
-		if($permState == 2){
+		if ($permState == 2) {
 			return false;
 		}
 		return false;
@@ -542,15 +542,13 @@ class mainLib {
 		$query = "SELECT person1,person2 FROM friendships WHERE person1 = :accountID OR person2 = :accountID"; //selecting friendships
 		$query = $db->prepare($query);
 		$query->execute([':accountID' => $accountID]);
-		$result = $query->fetchAll();//getting friends
-		if($query->rowCount() == 0){
+		$result = $query->fetchAll();
+		if ($query->rowCount() == 0) {
 			return array();
-		}
-		else
-		{//oh so you actually have some friends kden
+		} else {
 			foreach ($result as &$friendship) {
 				$person = $friendship["person1"];
-				if($friendship["person1"] == $accountID){
+				if ($friendship["person1"] == $accountID) {
 					$person = $friendship["person2"];
 				}
 				$friendsarray[] = $person;
@@ -565,16 +563,16 @@ class mainLib {
 		$query->execute([':accountID' => $accountID]);
 		$roleIDarray = $query->fetchAll();
 		$roleIDlist = "";
-		foreach($roleIDarray as &$roleIDobject){
+		foreach ($roleIDarray as &$roleIDobject) {
 			$roleIDlist .= $roleIDobject["roleID"] . ",";
 		}
 		$roleIDlist = substr($roleIDlist, 0, -1);
-		if($roleIDlist != ""){
+		if ($roleIDlist != "") {
 			$query = $db->prepare("SELECT $permission FROM roles WHERE roleID IN ($roleIDlist) ORDER BY priority DESC");
 			$query->execute();
 			$roles = $query->fetchAll();
-			foreach($roles as &$role){ 
-				if($role[$permission] > $maxvalue){
+			foreach ($roles as &$role) { 
+				if ($role[$permission] > $maxvalue) {
 					$maxvalue = $role[$permission];
 				}
 			}
@@ -691,10 +689,39 @@ class mainLib {
 		curl_close($ch);
 		return $size;
 	}
+
 	public function suggestLevel($accountID, $levelID, $difficulty, $stars, $feat, $auto, $demon){
 		include __DIR__ . "/connection.php";
 		$query = "INSERT INTO suggest (suggestBy, suggestLevelID, suggestDifficulty, suggestStars, suggestFeatured, suggestAuto, suggestDemon, timestamp) VALUES (:account, :level, :diff, :stars, :feat, :auto, :demon, :timestamp)";
 		$query = $db->prepare($query);
 		$query->execute([':account' => $accountID, ':level' => $levelID, ':diff' => $difficulty, ':stars' => $stars, ':feat' => $feat, ':auto' => $auto, ':demon' => $demon, ':timestamp' => time()]);
 	}
+
+    function getCount($string) {
+        include __DIR__ . '/connection.php';
+		if ($string == "users") {
+			$query = $db->prepare("SELECT count(*) FROM users");
+			$query->execute();
+			$res = $query->fetchColumn();
+			return $res;
+		}
+		if ($string == "levels") {
+			$query = $db->prepare("SELECT count(*) FROM levels");
+			$query->execute();
+			$res = $query->fetchColumn();
+			return $res;
+		}
+		if ($string == "acc") {
+			$query = $db->prepare("SELECT count(*) FROM accounts");
+			$query->execute();
+			$res = $query->fetchColumn();
+			return $res;
+		}
+		if ($string == "com") {
+			$query = $db->prepare("SELECT count(*) FROM comments");
+			$query->execute();
+			$res = $query->fetchColumn();
+			return $res;
+		}
+    }
 }
