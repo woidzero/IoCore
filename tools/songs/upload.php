@@ -1,6 +1,6 @@
 <?php
 include "../../include/lib/connection.php";
-include "../../settings/name.php";
+include "../../config/name.php";
 require_once "../../include/lib/exploitPatch.php";
 
 if ($_FILES && $_FILES['filename']['error'] == UPLOAD_ERR_OK) {
@@ -10,7 +10,7 @@ if ($_FILES && $_FILES['filename']['error'] == UPLOAD_ERR_OK) {
         $log = "[TYPE.EXCEPTION]: You can upload only audios!";
     } else {
         $maxsize = 10485760;
-        if($_FILES['filename']['size'] >= $maxsize) {
+        if ($_FILES['filename']['size'] >= $maxsize) {
             $log = "[SIZE.EXCEPTION]: Max file size is 8mb";
         } else {
             $string = $_FILES['filename']['name']; // song_name.mp3
@@ -19,19 +19,21 @@ if ($_FILES && $_FILES['filename']['error'] == UPLOAD_ERR_OK) {
             $name = str_replace(' ', '%20', $string); // song%20name
 
             move_uploaded_file($_FILES['filename']['tmp_name'], "song/$songname.mp3");
-
             $size = round($_FILES['filename']['size'] / 1024 / 1024, 2);
             $hash = "";
-            $servername = $_SERVER['SERVER_NAME'];
-            $song = "https://$servername/tps/database/tools/songs/song/$name";
+
+            $song = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."song/";
+            $cur = str_replace('upload.php', '', $song) . $name;
+
             $query = $db->prepare("INSERT INTO songs (name, authorID, authorName, size, download, hash)
             VALUES (:name, '9', :author, :size, :download, :hash)");
-            $query->execute([':name' => $song_name, ':download' => $song, ':author' => "IoCore Music", ':size' => $size, ':hash' => $hash]);
+            $query->execute([':name' => $song_name, ':download' => $cur, ':author' => "IoCore Music", ':size' => $size, ':hash' => $hash]);
             $log = "[SUCCES] ID: <b>".$db->lastInsertId()."</b>";
         }
     }
-} else {}
+}
 ?>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
 <link href="../../include/components/css/styles.css" rel="stylesheet">
