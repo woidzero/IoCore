@@ -1,3 +1,3 @@
 <?php 
-$gdpsname = "Paradox Dash"; // GDPS NAME
+$gdpsname = "GDPS"; // GDPS NAME
 ?>
