@@ -1,61 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-html {
-	box-sizing: border-box; 
-}
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
   text-decoration: none;
   outline: none;
   box-sizing: border-box; 
   transition: ease-in-out 0.2s;
+  font-family: 'Lato', sans-serif;
+}
+
+:root {
+  --primary: #a7a3ff;
+  --dark: #181818;
+  --dark-2: #212121;
+  --dark-3: #303030;
+  --dark-3: #303030;
 }
 
 
 body {
-  background: #1e2124;
-  font-family: 'Open Sans', sans-serif;
+  background: var(--dark);
 }
 
 
+
 #toolbox {
-  height: 40%;
-  background: #282b30;
+  background: var(--dark-2);
   width: 90%;
-  margin: 0 auto;
+  margin: 5% auto;
   text-align: center;
   display: block;
+  padding: 20px;
 }
 
 #cron {
   display: block;
-  background: #282b30;
+  background: var(--dark-2);
   text-align: center;
 }
 
 #cron p {
-  color: azure;
+  color: var(--primary);
   padding: 15px;
 }
 
 #cron h1 {
   font-size: 30px;
-  color: #93b4ff;
+  color: var(--primary);
   text-align: center;
 }
 
 .button {
   display: inline-block;
   padding: 15px;
-  color: azure;
-  background: #36393e;
+  color: #fff;
+  background: var(--dark-3);
   margin-top: 5%;
   margin: 1% 10px;
   cursor: pointer;
 }
 
 .button:hover {
-  background-color: #424549;
+  background-color: #383838;
 }
 
 td .button {
@@ -69,32 +74,29 @@ td .button {
 
 .toolName {
   color: aliceblue;
-  padding-top: 3%;
   font-size: 30px;
 }
 
-#tools h1 {
+#toolbox h1, #tools h1 {
   font-size: 30px;
-  color: #93b4ff;
+  color: var(--primary);
   text-align: center;
+  padding-top: 10px;
 }
 
-.title {
-  font-size: 30px;
-  color: #93b4ff;
-  text-align: center;
+::-webkit-file-upload-button {
+  display: none;
 }
 
 
 footer {
-  color: #424549;
+  color: var(--dark-3);
   margin-top: 27%;
   text-align: center;
 }
 
-
 footer span, footer a {
-  color: #7289da;
+  color: var(--primary);
   font-weight: 700;
 }
 
@@ -105,7 +107,7 @@ canvas {
 }
 
 #toolbox__log {
-  margin-top: 15%;
+  margin-top: 5%;
 }
 
 #toolbox__log a {
@@ -113,11 +115,11 @@ canvas {
 }
 
 input[type=file] {
-  margin-top: 15%;
-  border: dotted #424549 2px;
-  color: #d7f1fa;
+  margin-top: 5%;
+  border: dotted var(--primary) 2px;
+  color: var(--primary);
   padding: 30px;
-  background: #36393e;
+  background: var(--dark-3);
 }
 
 form .button {
@@ -127,13 +129,13 @@ form .button {
   font-size: 20px;
   line-height: 20px;
   padding: 12px 30px;
-  color: #BFE2FF;
+  color: var(--primary);
   transition: box-shadow 0.3s, transform 0.3s;
   cursor: pointer;
 }
 
 #toolbox__log {
-  color: #7289da;
+  color: var(--primary);
 }
 
 @media screen and (max-width: 780px) {
@@ -143,7 +145,7 @@ form .button {
 }
 
 .form {
-  color: #BFE2FF;
+  color: var(--primary);
 }
 
 .form input[type="submit"] {
@@ -153,10 +155,10 @@ form .button {
   font-size: 20px;
   line-height: 20px;
   padding: 12px 30px;
-  color: #BFE2FF;
+  color: var(--primary);
   transition: box-shadow 0.3s, transform 0.3s;
   cursor: pointer;
-  background: #36393e;
+  background: var(--dark-3);
 }
 
 .form input[type="text"], 
@@ -166,10 +168,11 @@ form .button {
   overflow: hidden;
   font-size: 20px;
   line-height: 20px;
-  padding: 5px;
-  color: #BFE2FF;
+  padding: 10px 20px;
+  color: var(--primary);
   transition: box-shadow 0.3s, transform 0.3s;
-  background: #36393e;
+  background: var(--dark-3);
+  border-radius: 10px;
 }
 
 .table {
@@ -183,9 +186,9 @@ form .button {
 	text-align: left;
 	border: none;
 	padding: 10px 15px;
-	background: #35393f;
+	background: var(--dark-3);
 	font-size: 14px;
-  color: #7289da;
+  color: var(--primary);
 }
 
 .table tr th:first-child {
@@ -220,4 +223,10 @@ form .button {
 .table td a {
   color: #fff;
   font-weight: 600;
+}
+
+.log {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
 }
