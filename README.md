@@ -34,9 +34,9 @@ https://discord.gg/hH6GA4kmu8
 ### Credits
 Originals: https://github.com/Cvolton/GMDprivateServer & https://github.com/foxodever/BetterCvoltonGDPS
 
-XOR encryption - https://github.com/sathoro/php-xor-cipher - (include/lib/XORCipher.php)
-Cloud save encryption - https://github.com/defuse/php-encryption - (include/lib/defuse-crypto.phar)
-Jscolor - http://jscolor.com/
+XOR encryption - https://github.com/sathoro/php-xor-cipher - (include/lib/XORCipher.php)<br>
+Cloud save encryption - https://github.com/defuse/php-encryption - (include/lib/defuse-crypto.phar)<br>
+Jscolor - http://jscolor.com/<br>
 
 And pavlukivan, Italian APK Downloader.
 
