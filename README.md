@@ -5,7 +5,7 @@
 <h1>IoCore GDPS</h1>
 
 [Author](https://woidzero.xyz/) |
-[Changelog](https://github.com/IoCore/CHANGELOG.md)
+[Discord](https://discord.gg/RSsCkch3CM)
 
 </div>
 
