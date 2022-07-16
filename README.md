@@ -17,15 +17,14 @@
 1) Renamed folders.
 2) Song upload better.
 3) Optimization.
-4) GDPS API (tools/api)
-5) Design Tools
-6) Utils
+4) API (utils/api)
+5) Better tools page
 
 ### Setup
 1) Upload the files on a webserver
 2) Import database.sql into a MySQL/MariaDB database
-3) Edit the links in GeometryDash.exe (base64 encoded since 2.1)
-4) If you want use dashboard: write GDPS name into `/settings/name.php`
+3) Edit the links in GeometryDash.exe (base64 encoded since 2.1+)
+4) Write GDPS name into `/settings/name.php`
 5) Edit `/config/connection.php` and `/config/mail.php`
 
 ### Support:
