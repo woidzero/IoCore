@@ -78,7 +78,7 @@ if($_POST["userName"] != "" && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL
 					$mail->addAddress("$email"); 
 					$mail->isHTML(true);
 					$mail->Subject = $gdpsname.' Account activation';
-					$mail->Body    = "<h1 align=center>Paradox Dash Activate | $userName</h1><p align=center>activate your Paradox Dash account by going to link down:</p>
+					$mail->Body    = "<h1 align=center>$gdpsname Account Activation | $userName</h1><p align=center>activate your $gdpsname account by going to link down:</p>
 					<p align=center><a href='$url_register?token=$token' style='color:red;text-decoration:none'>Activate your account</a></p>
 					<p align=center>Can not open link? $url_register?token=$token</p>";
 					$mail->AltBody = '';
