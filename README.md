@@ -1,6 +1,6 @@
 <div align="center">
 <p>
-    <img width="100" src="https://woidzero.xyz/assets/iocore.png">
+    <img width="100" src="https://woidzero.xyz/assets/images/iocore.png">
 </p>
 <h1>IoCore GDPS</h1>
 
